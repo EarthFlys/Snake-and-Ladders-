@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snakes and ladders</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;700&display=swap" rel="stylesheet">
+  <!-- meta config for LinkedIn preview -->
+  <meta property="og:title" content="Snakes and Ladders Game" />
+  <meta property="og:description" content="Open-source game developed by friends and I (vanilla HTML CSS JavaScript)" />
+  <meta property="og:url" content="https://yuuchin.github.io/Snakes-and-Ladders/" />
+  <meta property="og:image" content="img/ThumbnailSnakesAndLadder.jpg" />
+</head>
+
+<body>
+
+  <div id="welcome" class="game">
+    <header>
+      <h1>ยินดีต้อนรับทุกคนเข้าสู่เกม "บันไดงูหรรษา"</h1>
+      <p>ก่อนจะเริ่มเกม: ให้กรอกหมายเลขจำนวนผู้เล่น และให้กดปุ่มเริ่มเกม!</p>
+      <input id="player-num" type="number" min="2" max="4" value="2" />
+      <button onclick="startGame()">Start</button>
+    </header>
+  </div>
+  <div id="gameboard" class="game" hidden>
+
+    <header>
+      <h1 class="m-0">Snakes and Ladders</h1>
+      
+      <div class="controls">
+        <button id="roll-dice" class="button" onclick="rollDice()">Roll dice</button>
+        <p id="dice-results" class="inline m-0 m-lr"></p>
+        
+        <div id="win" hidden style="float: right">
+          <h3 id="win-text" class="inline m-0 m-lr">คุณชนะแล้ว!</h3>
+          <button class="button" onclick="restart()">เริ่มต้นใหม่</button>
+        </div>
+      </div> <!-- end controls div -->
+    </header>
+
+    <div id="board">
+
+    </div>
+  </div> <!-- end game container -->
+
+
+  <button class="drawerBtn" onclick="openDrawer()">?</button>
+
+  <div id="drawer">
+    <button class="drawerBtn" onclick="closeDrawer()">X</button>
+    <h2>วิธีการเล่น</h2>
+    <ol>
+      <li>
+        <p>ผู้เล่นจะเคลื่อนที่ตามจำนวนแต้มบนลูกเต๋า หากผู้เล่นทอยได้ 4 แต้ม ผู้เล่นจะเคลื่อนที่ไป 4 ช่อง</p>
+      <li>
+        <p>เมื่อผู้เล่นตกลงบนหัวงู ตัวหมากของผู้เล่นจะเลื่อนไปที่หางงูทันที การตกลงบนหางงูจะไม่มีผลใดๆ</p>
+            <li>
+        <p>เมื่อผู้เล่นตกลงที่ฐานของบันได ผู้เล่นจะปีนขึ้นไปที่ยอดบันไดทันที การตกลงที่ยอดบันไดจะไม่มีผลใดๆ</p>
+            <li>
+        <p>ผู้เล่นคนแรกที่ไปถึงช่องสูงสุดบนกระดาน, ช่องที่ 100, จะเป็นผู้ชนะเกม</p>
+    </ol>
+  </div>
+
+
+</body>
+<script src="./script.js"></script>
+
+</html>
