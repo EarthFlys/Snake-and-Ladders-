@@ -9,6 +9,10 @@ body {
   background-position: center;
   display: flex;
   color: rgb(34, 34, 34);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ทำให้ body สูงเต็มจอ */
+  margin: 0;
 }
 
 header,
@@ -16,6 +20,10 @@ footer {
   text-align: center;
   background-color: rgba(245, 245, 220, 0.5);
   box-shadow: 2px 2px 2px gray;
+}
+
+.game {
+  flex: 1; /* ทำให้ส่วนเกมขยายได้ และ footer อยู่ล่าง */
 }
 
 #drawer {
@@ -156,3 +164,43 @@ footer {
   padding: 10px;
 }
 
+/* ส่วนของ Copyright */
+.copyright {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.copyright-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  height: 40px; /* ขนาดของโลโก้ในฟุตเตอร์ */
+  width: auto;
+}
+
+.copyright-container span {
+  font-size: 14px;
+  color: #555;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-media i {
+  font-size: 20px; /* ขนาดของไอคอน Instagram */
+  color: #C13584; /* สีของ Instagram */
+  transition: color 0.3s;
+}
+
+.social-media i:hover {
+  color: #e1306c; /* สีของ Instagram เมื่อ hover */
+}
